@@ -1,4 +1,4 @@
-import logo from '../image/logo.svg';
+import logo from '../image/CHE.png';
 import '../css/App.scss';
 
 function AppPage() {
@@ -22,4 +22,4 @@ function AppPage() {
   );
 }
 
-export default App;
+export default AppPage;

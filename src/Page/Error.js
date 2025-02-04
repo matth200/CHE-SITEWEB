@@ -7,3 +7,5 @@ function ErrorPage(){
         <p>Vous vous êtes perdu...</p>
     </div>
 }
+
+export default ErrorPage;

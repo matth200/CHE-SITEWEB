@@ -22,4 +22,4 @@ function PreparationPage() {
   );
 }
 
-export default App;
+export default PreparationPage;
