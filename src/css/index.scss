@@ -11,9 +11,8 @@ html,body {
 }
 
 .Page{
-  width: calc(100vw - 2*20px);
-  height: calc(100vh - 2*20px);
-  padding: 20px;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
