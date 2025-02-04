@@ -59,13 +59,13 @@ const Console = ({
       },
       "command to read file",
     ],
-    "./app": [
+    "./cyberhumanum_app": [
       (args) => {
         console.log(hello_app);
         let text = "" + hello_app[0];
         return text.split("\n");
       },
-      "app cv",
+      "cyberhumanum_app",
     ],
     make: [
       (args) => {
