@@ -5,7 +5,7 @@ import Console from "../Component/Console";
 function TerminalPage() {
   return (
     <div className="TerminalPage Page">
-        <Console />
+        <Console name="cryptanga" machine="CHE" />
     </div>
   );
 }

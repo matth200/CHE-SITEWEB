@@ -7,7 +7,11 @@ import '../css/Console.scss';
 
 let hello_app = [""];
 
-let Console = (props) => {
+const Console = ({
+  name = "user",
+  machine = "server",
+  fast = false, 
+}) => {
   const NORMAL_SPEED = 70;
   const FAST_SPEED = 1;
 
@@ -93,19 +97,23 @@ let Console = (props) => {
   let [currentIndex, setCurrentIndex] = useState(0);
   let [currentLine, setCurrentLine] = useState("");
   let [start, setStart] = useState(true);
-  let [speed, setSpeed] = useState(NORMAL_SPEED);
+  let [speed, setSpeed] = useState((fast ? FAST_SPEED : NORMAL_SPEED));
   let [windowEventReady, setWindowEventReady] = useState(false);
   let [focusTerminal, setFocusTerminal] = useState(true);
 
   let [liveCommand, setLiveCommand] = useState("");
   const myRef = useRef(null);
   const hasVerticalScrollbar = () =>
-    (myRef.current)?(myRef.current.scrollHeight > myRef.current.clientHeight):false;
+    myRef.current
+      ? myRef.current.scrollHeight > myRef.current.clientHeight
+      : false;
 
   //on gère le scroll
   const lastRef = useRef(null);
   const updateScroll = () =>
-   (myRef.current)?( myRef.current.scrollTo(0, lastRef.current.offsetTop)):false;
+    myRef.current
+      ? myRef.current.scrollTo(0, lastRef.current.offsetTop)
+      : false;
 
   // useEffect(()=>{
   //     window.addEventListener('keydown', (event) => {
@@ -306,7 +314,10 @@ let Console = (props) => {
           <code ref={i == array.length - 1 ? lastRef : null} key={i}>
             {!resultList[i] && (
               <div className="preCommand">
-                <p className="nameCommand">mattheo@serveur</p>:<mark>~$</mark>
+                <p className="nameCommand">
+                  {name}@{machine}
+                </p>
+                :<mark>~$</mark>
               </div>
             )}
             {i >= listeLine.length - 1 &&

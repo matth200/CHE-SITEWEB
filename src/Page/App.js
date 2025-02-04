@@ -48,7 +48,7 @@ return (
       className="AppPage3 Page"
       style={{ opacity: open ? 1 : 0, display: open ? "flex" : "none" }}
     >
-      <Console />
+      <Console name="cryptanga" machine="CHE"/>
     </div>
   </>
 );
