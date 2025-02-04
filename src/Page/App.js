@@ -1,10 +1,10 @@
 import logo from '../image/CHE.png';
-import '../css/App.scss';
+import styles from '../css/App.scss';
+import "../css/App.scss";
 
 import React, { useState } from "react";
 import { useTrail, a } from "@react-spring/web";
 
-import styles from "../css/styles.module.scss";
 
 const Trail= ({ open, children }) => {
   const items = React.Children.toArray(children);
@@ -29,12 +29,11 @@ const Trail= ({ open, children }) => {
 function AppPage() {
   const [open, set] = useState(true);
 return (
-  <div className={styles.container} onClick={() => set((state) => !state)}>
+  <div className={"AppPage Page"} onClick={() => set((state) => !state)}>
     <Trail open={open}>
-      <span>Lorem</span>
-      <span>Ipsum</span>
-      <span>Dolor</span>
-      <span>Sit</span>
+      <span>Cyber</span>
+      <span>Humanum</span>
+      <span>Est</span>
     </Trail>
   </div>
 );
