@@ -1,0 +1,33 @@
+.typewriterText {
+    font-size: 2rem;
+    white-space: pre;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.cursor {
+    display: inline-block;
+    min-width: 0.5em;
+    width: 0.5em;
+    min-height: 0.9em;
+    height: 0.9em;
+    background-color: #fff;
+    margin-left: 0.1em;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    from{
+        visibility: visible;
+    }
+    to {
+        visibility: hidden;
+    }
+}
