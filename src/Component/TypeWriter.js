@@ -25,7 +25,7 @@ const Typewriter = ({ text, speed = 150, size=30, onEnd=null }) => {
   return (
     <div className="typewriterText" style={{ fontSize: size }}>
       <span>{displayedText}</span>
-      <div className="cursor"></div>
+      {!done&&<div className="cursor"></div>}
     </div>
   );
 };
