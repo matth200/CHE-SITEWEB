@@ -7,6 +7,15 @@ body {
  
 }
 
+.Page{
+  width: calc(100vw - 2*20px);
+  height: calc(100vh - 2*20px);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @font-face {
   font-family: 'Pixellari';
   src: url("../Font/Pixellari.ttf") format("truetype");
