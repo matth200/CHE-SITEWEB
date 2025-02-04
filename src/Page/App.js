@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Typewriter from '../Component/TypeWriter';
 
 import GeoideImg from '../image/geoide-nous.jpg';
+import Console from '../Component/Console';
 
 function AppPage() {
   const [open, setOpen] = useState(false);
@@ -42,6 +43,12 @@ return (
         <h1>Présentation de la meilleure équipe</h1>
         <Typewriter text="Les CRYPTANGA" speed={100} size={60} />
       </div>
+    </div>
+    <div
+      className="AppPage3 Page"
+      style={{ opacity: open ? 1 : 0, display: open ? "flex" : "none" }}
+    >
+      <Console />
     </div>
   </>
 );

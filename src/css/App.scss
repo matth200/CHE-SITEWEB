@@ -32,3 +32,12 @@
     width: 100%;
   }
 }
+
+.AppPage3 {
+  display: flex;
+  flex-direction: row;
+  width: calc(100vw - 2*100px);
+  height: calc(100vh - 2*100px);
+  padding: 100px;
+  background-color: #0c2064;
+}
