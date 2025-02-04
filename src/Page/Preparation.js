@@ -1,9 +1,9 @@
-import logo from '../image/logo.svg';
-import '../css/App.scss';
+import logo from "../image/logo.svg";
+import "../css/App.scss";
 
-function AppPage() {
+function PreparationPage() {
   return (
-    <div className="AppPage Page">
+    <div className="PreparationPage Page">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
