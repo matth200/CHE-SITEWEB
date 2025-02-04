@@ -28,3 +28,21 @@ html,body {
   font-family: 'PressStart';
   src: url("../Font/PressStart.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "digitalix";
+  src: local("digitalix"), url("../Font/digitalix.ttf") format("truetype");
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: "Minecraft";
+  src: local("Minecraft"), url("../Font/Minecraft.ttf") format("truetype");
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: "nokiafc22";
+  src: local("nokiafc22"), url("../Font/nokiafc22.ttf") format("truetype");
+  font-weight: regular;
+}
