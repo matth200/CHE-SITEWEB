@@ -1,10 +1,11 @@
 import React from 'react';
 import '../css/Bapt.scss';
+import Typewriter from '../Component/TypeWriter';
 
 export default function BaptPage(){
 
 
     return <div className='Page BaptPage'>
-        <h1>Page de Baptiste</h1>
+        <Typewriter text="Page de Baptiste" speed={50}/>
     </div>
 }
