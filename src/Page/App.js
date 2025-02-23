@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import Typewriter from '../Component/TypeWriter';
 
 import Console from '../Component/Console';
+import Timeline from '../Component/TimeLine'
 
 function AppPage() {
     const [open, setOpen] = useState(false);
@@ -35,13 +36,7 @@ function AppPage() {
                 className="AppPage2 Page"
                 style={{opacity: open ? 1 : 0, display: open ? "flex" : "none"}}
             >
-                <div className="block-left">
-                    {/* <img src={GeoideImg} alt="geoide-nous"/> */}
-                </div>
-                <div className="block-right">
-                    <h1>Présentation de la meilleure équipe</h1>
-                    <Typewriter text="Les CRYPTANGA" speed={100} size={60}/>
-                </div>
+                <Timeline/>
             </div>
             <div
                 className="AppPage3 Page"
