@@ -137,8 +137,7 @@ const Timeline = () => {
             </div>
             <div className="body">
               <p>
-                La cérémonie de clôture, tenue au Palais du Gouvernement de
-                Nancy, récompense les meilleurs talents. L’équipe Cryptanga est
+                La cérémonie de clôture, récompense les meilleurs talents. L’équipe Cryptanga est
                 sacrée meilleure équipe, saluée pour sa défense, sa gestion de
                 crise et son excellence en lutte d’influence.
               </p>
