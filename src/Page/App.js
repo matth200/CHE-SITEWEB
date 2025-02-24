@@ -27,13 +27,20 @@ function AppPage() {
                     />
                 )}
                 <div className="delay-home" style={{opacity: open ? 1 : 0}}>
-                    <h1>Présentation de l'évenement par l'équipe du Cryptanga</h1>
-                    <h2>Le CyberHumanum'Est est un évenement répliquant une cyberguerre entre deux pays, </h2>
-                    <h2>se battant pour obtenir un contrat avec l'ile tant convoitée des Riverschelles.</h2>
+                    <h1>Presentation de l'evenement par l'equipe du Cryptanga</h1>
+                    <h2>Le CyberHumanum'Est est un evenement repliquant une cyberguerre entre deux pays, </h2>
+                    <h2>se battant pour obtenir un contrat avec l'ile tant convoitee des Riverschelles.</h2>
                 </div>
+
+            </div>
+            <div className="fleche" style={{opacity: open ? 1 : 0}}>
+                <a href="#frise">
+                    <div className="scroll-down-dude"></div>
+                </a>
             </div>
             <div
-                className="AppPage2 Page"
+                id="frise"
+                className="frise"
                 style={{opacity: open ? 1 : 0, display: open ? "flex" : "none"}}
             >
                 <Timeline/>

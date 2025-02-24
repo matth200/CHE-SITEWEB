@@ -1,46 +1,100 @@
 .AppPage1 {
   text-align: center;
-  .delay-home{
+
+  .delay-home {
     margin-top: 50px;
     transition: opacity 0.5s;
+
     h2 {
       color: #00d7ff;
     }
   }
 }
 
-.AppPage2 {
+//Fleche animée scroll
+.fleche {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  margin-top: -100px; //Pour qu'il apparraisse en dessous du titre
 
-  .block-left{
-    background: url("../image/geoide-nous.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
+  $strokeWidth: 4px;
+  $strokeColor: white;
+  $timing: 2.6s;
+  $easing: cubic-bezier(0.77, 0, 0.175, 1);
+
+  html, body {
     width: 100%;
     height: 100%;
-    filter: blur(3px);
-    img{
-      max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .scroll-down-dude:before,
+  .scroll-down-dude:after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    border-bottom: $strokeWidth solid $strokeColor;
+    border-right: $strokeWidth solid $strokeColor;
+  }
+
+  .scroll-down-dude:before {
+    animation: down-arrow-before $timing $easing infinite;
+  }
+
+  .scroll-down-dude:after {
+    animation: down-arrow-after $timing $easing infinite;
+  }
+
+  @keyframes down-arrow-before {
+    50% {
+      transform: rotate(45deg) translate(70%, 70%);
+    }
+    100% {
+      transform: rotate(45deg) translate(70%, 70%);
     }
   }
 
-  .block-right{
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    width: 100%;
+  @keyframes down-arrow-after {
+    50% {
+      transform: rotate(45deg) translate(110%, 110%);
+      opacity: 0;
+    }
+    51% {
+      transform: rotate(45deg) translate(-130%, -130%);
+    }
+    100% {
+      transform: rotate(45deg) translate(-70%, -70%);
+      opacity: 1;
+    }
   }
+}
+
+.frise {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .AppPage3 {
   display: flex;
   flex-direction: row;
-  width: calc(100vw - 2*100px);
-  height: calc(100vh - 2*100px);
+  width: calc(100vw - 2 * 100px);
+  height: calc(100vh - 2 * 100px);
   padding: 100px;
   background-color: #0c2064;
 }
+
