@@ -56,6 +56,20 @@
     }
 }
 
+.Console.matrix-mode {
+    background-color: #000 !important;
+    color: #0f0 !important;
+    text-shadow: 0 0 5px #0f0;
+
+    #cursor {
+        background-color: #0f0 !important;
+    }
+
+    .preCommand {
+        color: #0f0 !important;
+    }
+}
+
 
 @keyframes cursor_animation {
     from {
