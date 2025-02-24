@@ -1,16 +1,17 @@
-html,body {
+html, body {
   margin: 0;
   padding: 0;
-  font-family: "Pixellari";
-  background-color: rgba(10,10,10,0.9);
+  font-family: "enter-the-gungeon-big";
+  background-color: rgba(10, 10, 10, 0.9);
   color: white;
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
- 
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-.Page{
+.Page {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -25,6 +26,11 @@ html,body {
 }
 
 @font-face {
+  font-family: 'enter-the-gungeon-big';
+  src: url("../Font/enter-the-gungeon-big.ttf") format("truetype");
+}
+
+@font-face {
   font-family: 'PressStart';
   src: url("../Font/PressStart.ttf") format("truetype");
 }
@@ -32,17 +38,14 @@ html,body {
 @font-face {
   font-family: "digitalix";
   src: local("digitalix"), url("../Font/digitalix.ttf") format("truetype");
-  font-weight: regular;
 }
 
 @font-face {
   font-family: "Minecraft";
   src: local("Minecraft"), url("../Font/Minecraft.ttf") format("truetype");
-  font-weight: regular;
 }
 
 @font-face {
   font-family: "nokiafc22";
   src: local("nokiafc22"), url("../Font/nokiafc22.ttf") format("truetype");
-  font-weight: regular;
 }

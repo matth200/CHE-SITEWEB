@@ -1,90 +1,86 @@
 import "../css/Timeline.scss";
+import { motion } from "framer-motion";
 
 const Timeline = () => {
     return (
-        <div>
-            <div className="timeline">
-                <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
-                    <div className="timeline__event__icon ">
-                        <i className="lni-cake"></i>
+        <div className="timeline">
+            <section id="timeline">
+                <div className="demo-card-wrapper">
+                    <motion.div className="demo-card demo-card--step1" initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
+                        <div className="head">
+                            <div className="number-box">
+                                <span>01</span>
+                            </div>
+                            <h2><span className="small">01/01/01</span> Le Kick'OFF</h2>
+                        </div>
+                        <div className="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt
+                                doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic"/>
+                        </div>
+                    </motion.div>
 
-                    </div>
-                    <div className="timeline__event__date">
-                        20-08-2019
-                    </div>
-                    <div className="timeline__event__content ">
-                        <div className="timeline__event__title">
-                            Birthday
+                    <motion.div className="demo-card demo-card--step2" initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
+                        <div className="head">
+                            <div className="number-box">
+                                <span>02</span>
+                            </div>
+                            <h2><span className="small">01/01/01</span> La preparation</h2>
                         </div>
-                        <div className="timeline__event__description">
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut
-                                aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium
-                                id aut architecto harum quidem dolorem in!</p>
+                        <div className="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt
+                                doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic"/>
                         </div>
-                    </div>
+                    </motion.div>
+
+                    <motion.div className="demo-card demo-card--step3" initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
+                        <div className="head">
+                            <div className="number-box">
+                                <span>03</span>
+                            </div>
+                            <h2><span className="small">01/01/01</span> LE CHE</h2>
+                        </div>
+                        <div className="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt
+                                doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic"/>
+                        </div>
+                    </motion.div>
+
+                    <motion.div className="demo-card demo-card--step4" initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
+                        <div className="head">
+                            <div className="number-box">
+                                <span>04</span>
+                            </div>
+                            <h2><span className="small">01/01/01</span> Retex</h2>
+                        </div>
+                        <div className="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt
+                                doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic"/>
+                        </div>
+                    </motion.div>
+
+                    <motion.div className="demo-card demo-card--step5" initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
+                        <div className="head">
+                            <div className="number-box">
+                                <span>05</span>
+                            </div>
+                            <h2><span className="small">01/01/01</span> Remise des prix</h2>
+                        </div>
+                        <div className="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt
+                                doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic"/>
+                        </div>
+                    </motion.div>
                 </div>
-                <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2">
-                    <div className="timeline__event__icon">
-                        <i className="lni-burger"></i>
-
-                    </div>
-                    <div className="timeline__event__date">
-                        20-08-2019
-                    </div>
-                    <div className="timeline__event__content">
-                        <div className="timeline__event__title">
-                            Lunch
-                        </div>
-                        <div className="timeline__event__description">
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut
-                                aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium
-                                id aut architecto harum quidem dolorem in!</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
-                    <div className="timeline__event__icon">
-                        <i className="lni-slim"></i>
-
-                    </div>
-                    <div className="timeline__event__date">
-                        20-08-2019
-                    </div>
-                    <div className="timeline__event__content">
-                        <div className="timeline__event__title">
-                            Exercise
-                        </div>
-                        <div className="timeline__event__description">
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut
-                                aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium
-                                id aut architecto harum quidem dolorem in!</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div className="timeline__event animated fadeInUp timeline__event--type1">
-                    <div className="timeline__event__icon">
-                        <i className="lni-cake"></i>
-
-                    </div>
-                    <div className="timeline__event__date">
-                        20-08-2019
-                    </div>
-                    <div className="timeline__event__content">
-                        <div className="timeline__event__title">
-                            Birthday
-                        </div>
-                        <div className="timeline__event__description">
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut
-                                aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium
-                                id aut architecto harum quidem dolorem in!</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            </section>
         </div>
     );
 };
 
 export default Timeline;
+
+
