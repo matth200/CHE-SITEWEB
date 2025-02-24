@@ -30,6 +30,7 @@ const Console = ({
         console.log(hello_app);
       });
   }, []);
+  
 
   //commands available
   const commands_available = {
@@ -86,6 +87,50 @@ const Console = ({
       },
       "Clean the screen",
     ],
+    reload: [
+      (args) => {
+        setTimeout(() => {
+          start = false;
+          setStart(false);
+
+          listeLine = [];
+          setListeLine(listeLine);
+
+          resultList = [false];
+          setResultList(resultList);
+
+          displayLines = [""];
+          setDisplayLines(displayLines);
+
+          currentIndex = 0;
+          setCurrentIndex(currentIndex);
+
+          currentLine = "";
+          setCurrentLine(currentLine);
+
+          liveCommand = "";
+          setLiveCommand(liveCommand);
+
+          focusTerminal = true;
+          setFocusTerminal(focusTerminal);
+
+          windowEventReady = false;
+          setWindowEventReady(windowEventReady);
+
+          window.removeEventListener("keydown", handleKeydown);
+
+          fetch(raw_text)
+          .then((r) => r.text())
+          .then((text) => {
+            listeLine = text.split("\n");
+            setListeLine(listeLine);
+          });
+
+        }, 0);
+        return [];
+      },
+      "Allow you to reload the animation of this screen"
+    ]
   };
 
   //directory
@@ -136,6 +181,32 @@ const Console = ({
   //         }
   //     });
   // },[]);
+
+
+  const handleKeydown = async (event) => {
+    event.preventDefault();
+    let keyString = String(event.key);
+
+    console.log(keyString);
+    if (keyString.length == 1) {
+      liveCommand = liveCommand + keyString;
+    } else if (keyString == "Backspace") {
+      liveCommand = liveCommand.substring(0, liveCommand.length - 1);
+    } else if (keyString == "Enter") {
+      enterFunction();
+    }
+    setLiveCommand(liveCommand);
+
+    //banger
+    setWindowEventReady((state) => !state);
+
+    //a chaque fois on focus ce qu'on écrit
+    setTimeout(() => {
+      //on descend le focus
+      setDisplayLines(displayLines);
+      updateScroll();
+    }, 100);
+  };
 
   const enterFunction = async () => {
     //on initialise la ligne qu'on était en train d'écrire
@@ -236,30 +307,7 @@ const Console = ({
         updateScroll();
       }, 100);
 
-      window.addEventListener("keydown", async (event) => {
-        event.preventDefault();
-        let keyString = String(event.key);
-
-        console.log(keyString);
-        if (keyString.length == 1) {
-          liveCommand = liveCommand + keyString;
-        } else if (keyString == "Backspace") {
-          liveCommand = liveCommand.substring(0, liveCommand.length - 1);
-        } else if (keyString == "Enter") {
-          enterFunction();
-        }
-        setLiveCommand(liveCommand);
-
-        //banger
-        setWindowEventReady((state) => !state);
-
-        //a chaque fois on focus ce qu'on écrit
-        setTimeout(() => {
-          //on descend le focus
-          setDisplayLines(displayLines);
-          updateScroll();
-        }, 100);
-      });
+      window.addEventListener("keydown", handleKeydown);
 
       //on lance la commande help à la fin
       displayLines.push("");
