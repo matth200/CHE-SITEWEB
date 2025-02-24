@@ -1,4 +1,8 @@
   import React, { useState, useEffect, useRef } from "react";
+  import { useWindowSize } from "react-use";
+  import Confetti from "react-confetti";
+
+
   import raw_text from "../data/console.txt";
   import file_info from "../data/files.json";
   import hello_app_text from "../data/hello_app.txt";
@@ -13,6 +17,9 @@
     let [matrixMode, setMatrixMode] = useState(false);
     let [currentDir, setCurrentDir] = useState("");
     let [secretCounter, setSecretCounter] = useState(0);
+    let [confetti, setConfetti] = useState(false);
+
+    const { width, height } = useWindowSize();
 
     const SECRET_MESSAGES = [
       "01010100 01101000 01100101 00100000 01000011 01010100 01000110 00100000 01101001 01110011 00100000 01100001 00100000 01101100 01101001 01100101",
@@ -55,7 +62,13 @@
         },
         "List directory contents",
       ],
-
+      confetti: [
+        (args) => {
+          confetti = !confetti;
+          setConfetti(confetti);
+          return [confetti?"Confetti":"no confetti"]
+        }, "Let's partyyyyy!!!"
+      ],
       cd: [
         (args) => {
           if (args.length < 2) return ["cd: missing argument"];
@@ -102,8 +115,7 @@
           }
 
           const fileName = args[1];
-          if (!current?.[fileName])
-            return [`cat: ${fileName}: No such file`];
+          if (!current?.[fileName]) return [`cat: ${fileName}: No such file`];
 
           const content = current[fileName];
           return content.split("\n");
@@ -155,6 +167,7 @@
         ],
         "Watch Star Wars in ASCII",
       ],
+
       "./cyberhumanum_app": [
         (args) => {
           console.log(hello_app);
@@ -163,6 +176,7 @@
         },
         "cyberhumanum_app",
       ],
+
       clear: [
         (args) => {
           listeLine = [""];
@@ -175,6 +189,7 @@
         },
         "Clean the screen",
       ],
+
       reload: [
         (args) => {
           setTimeout(() => {
@@ -218,7 +233,46 @@
         },
         "Allow you to reload the animation of this screen",
       ],
+
+      // Additional commands for the CTF experience
+
+      whoami: [() => [name], "Display the current user"],
+
+      nmap: [
+        (args) => {
+          const target = args[1] || "10.0.0.66";
+          return [
+            `Scanning ${target}...`,
+            "22/tcp: SSH open",
+            "80/tcp: HTTP open",
+            "443/tcp: HTTPS open",
+          ];
+        },
+        "Simulate a network scan",
+      ],
+
+      netcat: [
+        (args) => {
+          return [
+            "Establishing reverse shell...",
+            "Connection established to 10.0.0.66 on port 4444",
+          ];
+        },
+        "Simulate a reverse shell connection",
+      ],
+
+      exploit: [
+        (args) => {
+          return [
+            "Attempting exploit...",
+            "Buffer overflow successful!",
+            "Flag retrieved: CHE{EXPLOIT_SUCCESS}",
+          ];
+        },
+        "Simulate vulnerability exploitation",
+      ],
     };
+
 
     useEffect(() => {
       const handleSecret = () => {
@@ -438,29 +492,35 @@
     }
 
     return (
-      <div ref={myRef} className={`Console ${matrixMode ? "matrix-mode" : ""}`}>
-        {/* Keep existing rendering logic */}
-        {displayLines.map((elt, i, array) => (
-          <code ref={i === array.length - 1 ? lastRef : null} key={i}>
-            {!resultList[i] && (
-              <div className="preCommand">
-                <p className="nameCommand">
-                  {name}@{machine}
-                </p>
-                :<mark>~$</mark>
-              </div>
-            )}
-            {i >= listeLine.length - 1 &&
-            i == displayLines.length - 1 &&
-            !resultList[i] ? (
-              <pre>{liveCommand}</pre>
-            ) : (
-              <pre>{elt}</pre>
-            )}
-            {i == array.length - 1 && <div id="cursor"></div>}
-          </code>
-        ))}
-      </div>
+      <>
+        <div
+          ref={myRef}
+          className={`Console ${matrixMode ? "matrix-mode" : ""}`}
+        >
+          {/* Keep existing rendering logic */}
+          {displayLines.map((elt, i, array) => (
+            <code ref={i === array.length - 1 ? lastRef : null} key={i}>
+              {!resultList[i] && (
+                <div className="preCommand">
+                  <p className="nameCommand">
+                    {name}@{machine}
+                  </p>
+                  :<mark>~$</mark>
+                </div>
+              )}
+              {i >= listeLine.length - 1 &&
+              i == displayLines.length - 1 &&
+              !resultList[i] ? (
+                <pre>{liveCommand}</pre>
+              ) : (
+                <pre>{elt}</pre>
+              )}
+              {i == array.length - 1 && <div id="cursor"></div>}
+            </code>
+          ))}
+        </div>
+        {confetti&& <Confetti width={width} height={height} />}
+      </>
     );
   };
 
