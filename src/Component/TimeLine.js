@@ -30,7 +30,7 @@ const Timeline = () => {
                 de Lorraine, une cérémonie d’ouverture lance officiellement
                 l’exercice immersif.
               </p>
-              <Link to="/introduction">
+              <Link to="/gael">
                 <img src={GeoideImg} alt="Ouverture de l'événement" />
               </Link>
             </div>
@@ -48,7 +48,7 @@ const Timeline = () => {
                 <span>02</span>
               </div>
               <h2>
-                <span className="small">27/01/2025</span> La Préparation
+                <span className="small">27/01/2025</span> La Preparation
               </h2>
             </div>
             <div className="body">
@@ -58,7 +58,7 @@ const Timeline = () => {
                 d’un an. Ce défi allie enjeux géopolitiques et cyberattaques,
                 pour une immersion totale dans la cybersécurité.
               </p>
-              <Link to="/preparation">
+              <Link to="/matth">
                 <img src={GeoideImg} alt="Briefing des équipes" />
               </Link>
             </div>
@@ -76,7 +76,7 @@ const Timeline = () => {
                 <span>03</span>
               </div>
               <h2>
-                <span className="small">28/01/2025</span> Le Challenge
+                <span className="small">28/01/2025</span> Les Challenges
               </h2>
             </div>
             <div className="body">
@@ -86,7 +86,7 @@ const Timeline = () => {
                 s’affrontent sur des missions d’influence et de gestion de
                 crise.
               </p>
-              <Link to="/challenge">
+              <Link to="/bapt">
                 <img src={GeoideImg} alt="Simulation de cyberattaque" />
               </Link>
             </div>
@@ -114,7 +114,7 @@ const Timeline = () => {
                 en lumière les stratégies gagnantes, notamment en gestion de
                 crise et en cyber-influence.
               </p>
-              <Link to="/retex">
+              <Link to="/tristan">
                 <img src={GeoideImg} alt="Retours d'expérience" />
               </Link>
             </div>
@@ -141,7 +141,7 @@ const Timeline = () => {
                 sacrée meilleure équipe, saluée pour sa défense, sa gestion de
                 crise et son excellence en lutte d’influence.
               </p>
-              <Link to="/awards">
+              <Link to="/mano">
                 <img src={GeoideImg} alt="Cérémonie de remise des prix" />
               </Link>
             </div>
