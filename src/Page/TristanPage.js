@@ -7,6 +7,6 @@ export default function TristanPage(){
 
     return <div className='Page TristanPage'>
         <ButtonBack/>
-        <Typewriter text="Page de tristan" speed={50}/>
+        <Typewriter text="LE RETEX" speed={50}/>
     </div>
 }

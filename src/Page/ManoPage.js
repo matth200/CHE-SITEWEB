@@ -7,6 +7,6 @@ export default function ManoPage(){
 
     return <div className='Page ManoPage'>
         <ButtonBack/>
-        <Typewriter text="Page de Manoel" speed={50}/>
+        <Typewriter text="LA REMISE DES PRIX" speed={50}/>
     </div>
 }
