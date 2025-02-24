@@ -38,7 +38,7 @@ const Timeline = () => {
                 Le Cyber Humanum Est 2025 debute sur le campus de l’Universite de Lorraine. Cette ceremonie d’ouverture lance officiellement
                 l’exercice immersif et le scenario est explique aux equipes.
               </p>
-              <Link to="/gael">
+              <Link to="/bapt">
                 <img src={KickoffImg} alt="Ouverture de l'événement" />
               </Link>
             </div>
@@ -69,7 +69,7 @@ const Timeline = () => {
                 Les equipes, issues de plusieurs formations de l’Université de
                 Lorraine, se séparent et doivent preparer aux mieux l'evenement via des reunions et des entrainements.
               </p>
-              <Link to="/matth">
+              <Link to="/gael">
                 <img src={RootmeImg} alt="Briefing des équipes" />
               </Link>
             </div>
@@ -102,7 +102,7 @@ const Timeline = () => {
                 s’affrontent sur des missions d’influence et de gestion de
                 crise.
               </p>
-              <Link to="/bapt">
+              <Link to="/matth">
                 <img src={EventImg} alt="Simulation de cyberattaque" />
               </Link>
             </div>
@@ -133,7 +133,7 @@ const Timeline = () => {
                 Après plusieurs jours d’affrontements, les equipes font un recapitulatif et reviennent sur les moments cles qui ont marque leur exercice.
                 Les organisateurs prennent egalement la parole pour faire un debrief.
               </p>
-              <Link to="/tristan">
+              <Link to="/mano">
                 <img src={RetexImg} alt="Retours d'expérience" />
               </Link>
             </div>
@@ -166,7 +166,7 @@ const Timeline = () => {
                 sacree vainqueur, saluee notamment pour sa defense, sa gestion de
                 crise et ses attaques originales.
               </p>
-              <Link to="/mano">
+              <Link to="/tristan">
                 <img src={RemiseImg} alt="Cérémonie de remise des prix" />
               </Link>
             </div>
