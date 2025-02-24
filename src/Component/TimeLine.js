@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import "../css/Timeline.scss";
 import { motion } from "framer-motion";
 
-import GeoideImg from "../image/geoide-nous.jpg";
+import EventImg from "../image/event.png";
+import RetexImg from "../image/retex.png";
+import KickoffImg from "../image/kickoff.png";
+import RemiseImg from "../image/remise_prix.png"
+import RootmeImg from "../image/rootmepro.png"
 
 const Timeline = () => {
   return (
@@ -15,6 +19,11 @@ const Timeline = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
+            whileHover={{
+              scale: 1.02,
+              x: -7,
+              transition: { duration: 0.1 },
+            }}
           >
             <div className="head">
               <div className="number-box">
@@ -26,12 +35,11 @@ const Timeline = () => {
             </div>
             <div className="body">
               <p>
-                Le Cyber Humanum Est 2025 débute sur le campus de l’Université de Lorraine.Sous l’impulsion du COMCYBER et de l’Université
-                de Lorraine, une cérémonie d’ouverture lance officiellement
-                l’exercice immersif.
+                Le Cyber Humanum Est 2025 debute sur le campus de l’Universite de Lorraine. Cette ceremonie d’ouverture lance officiellement
+                l’exercice immersif et le scenario est explique aux equipes.
               </p>
               <Link to="/gael">
-                <img src={GeoideImg} alt="Ouverture de l'événement" />
+                <img src={KickoffImg} alt="Ouverture de l'événement" />
               </Link>
             </div>
           </motion.div>
@@ -42,6 +50,11 @@ const Timeline = () => {
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
+            whileHover={{
+              scale: 1.02,
+              x: 4,
+              transition: { duration: 0.1 },
+            }}
           >
             <div className="head">
               <div className="number-box">
@@ -53,13 +66,11 @@ const Timeline = () => {
             </div>
             <div className="body">
               <p>
-                Les équipes, issues de plusieurs formations de l’Université de
-                Lorraine, sont briefées sur un scénario élaboré pendant plus
-                d’un an. Ce défi allie enjeux géopolitiques et cyberattaques,
-                pour une immersion totale dans la cybersécurité.
+                Les equipes, issues de plusieurs formations de l’Université de
+                Lorraine, se séparent et doivent preparer aux mieux l'evenement via des reunions et des entrainements.
               </p>
               <Link to="/matth">
-                <img src={GeoideImg} alt="Briefing des équipes" />
+                <img src={RootmeImg} alt="Briefing des équipes" />
               </Link>
             </div>
           </motion.div>
@@ -70,6 +81,11 @@ const Timeline = () => {
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
+            whileHover={{
+              scale: 1.02,
+              x: -7,
+              transition: { duration: 0.1 },
+            }}
           >
             <div className="head">
               <div className="number-box">
@@ -81,13 +97,13 @@ const Timeline = () => {
             </div>
             <div className="body">
               <p>
-                Les équipes se lancent dans des opérations de cyberattaque et de
-                défense. Dans un contexte réaliste, Cryptanga, Anuméric et APT54
+                Les equipes se lancent dans des operations de cyberattaque et de
+                defense. Dans un contexte realiste, Cryptanga, Anumeric et APT54
                 s’affrontent sur des missions d’influence et de gestion de
                 crise.
               </p>
               <Link to="/bapt">
-                <img src={GeoideImg} alt="Simulation de cyberattaque" />
+                <img src={EventImg} alt="Simulation de cyberattaque" />
               </Link>
             </div>
           </motion.div>
@@ -98,6 +114,11 @@ const Timeline = () => {
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
+            whileHover={{
+              scale: 1.02,
+              x: 4,
+              transition: { duration: 0.1 },
+            }}
           >
             <div className="head">
               <div className="number-box">
@@ -109,13 +130,11 @@ const Timeline = () => {
             </div>
             <div className="body">
               <p>
-                Après plusieurs jours d’affrontements, les participants
-                analysent leurs performances. Les retours d’expérience mettent
-                en lumière les stratégies gagnantes, notamment en gestion de
-                crise et en cyber-influence.
+                Après plusieurs jours d’affrontements, les equipes font un recapitulatif et reviennent sur les moments cles qui ont marque leur exercice.
+                Les organisateurs prennent egalement la parole pour faire un debrief.
               </p>
               <Link to="/tristan">
-                <img src={GeoideImg} alt="Retours d'expérience" />
+                <img src={RetexImg} alt="Retours d'expérience" />
               </Link>
             </div>
           </motion.div>
@@ -126,6 +145,12 @@ const Timeline = () => {
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
+            whileHover={{
+              scale: 1.02,
+              x: -7,
+              transition: { duration: 0.1 },
+
+            }}
           >
             <div className="head">
               <div className="number-box">
@@ -137,12 +162,12 @@ const Timeline = () => {
             </div>
             <div className="body">
               <p>
-                La cérémonie de clôture, récompense les meilleurs talents. L’équipe Cryptanga est
-                sacrée meilleure équipe, saluée pour sa défense, sa gestion de
-                crise et son excellence en lutte d’influence.
+                La ceremonie de cloture, récompense les meilleures equipes dans chaque domaine. L’equipe Cryptanga est
+                sacree vainqueur, saluee notamment pour sa defense, sa gestion de
+                crise et ses attaques originales.
               </p>
               <Link to="/mano">
-                <img src={GeoideImg} alt="Cérémonie de remise des prix" />
+                <img src={RemiseImg} alt="Cérémonie de remise des prix" />
               </Link>
             </div>
           </motion.div>
