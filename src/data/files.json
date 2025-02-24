@@ -1,8 +1,161 @@
 {
-    "files":{
-        "password.txt": "SympAleSITEhein?",
-        "github.txt": "Here my github -->\nhttps://github.com/matth200",
-        "cyberhumanum_app": "01001000 01001001 01010010 01000101 00100000 01001101\n01000101 00100000 01011001 01001111 01010101 00100000\n01010111 01001111 01001110 00100111 01010100 00100000\n01010010 01000101 01000111 01010010 01000101 01010100\n00100000 01001001 01010100",
-        "flag.txt": "CHE{CETAITTROPBIEENNNARGGGGGGHHH}"
+  "files": {
+    "bin": {
+      "files": {
+        "bash": "ELF executable (pretend binary)",
+        "nano": "#!/bin/bash\necho 'Nice try! Real nano is in /usr/bin'",
+        "vim": "#!/bin/bash\necho 'VIM - Vi Improved (just kidding)'"
+      }
+    },
+    "etc": {
+      "files": {
+        "motd": "Welcome to CTF-OS!\nMay the flags be with you...",
+        "hosts": "127.0.0.1\tlocalhost\n42.42.42.42\tanswer_to_life",
+        "issue": "CTF-OS 1.0 \\n \\l\n\nWarning: System may contain easter eggs",
+        "sudoers": "# Security notice:\n# You're not in the sudoers file... but nice try!"
+      }
+    },
+    "home": {
+      "user": {
+        "files": {
+          ".bashrc": "# Aliases\nalias hack='echo \"Hacking mainframe...\"'",
+          ".ssh": {
+            "files": {
+              "id_rsa": "-----BEGIN OPENSSH PRIVATE KEY-----\nFAKE_KEY_DONT_TRY_THIS\n-----END OPENSSH PRIVATE KEY-----"
+            }
+          },
+          "todo.txt": "[ ] Take over world\n[ ] Find all flags\n[ ] Drink coffee",
+          "poem.txt": "Roses are red\nViolets are blue\nUnexpected '}' on line 32",
+          "games": {
+            "files": {
+              "snake.py": "# TODO: Implement snake game\nprint('SSSSS...')",
+              "chess.sh": "echo '♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜'"
+            }
+          },
+          ".secret_diary": {
+            "files": {
+              "entry1.txt": "Dear diary,\nToday I found a flag but forgot to commit it...",
+              "map.txt": "X marks the spot:\n█████\n█X░█\n█████"
+            }
+          }
+        }
+      }
+    },
+    "var": {
+      "log": {
+        "files": {
+          "system.log": "INFO: System operational\nDEBUG: 42 anomalies detected",
+          "security.log": "WARNING: Multiple sudo attempts\nNOTICE: User tried to 'rm -rf /'"
+        }
+      },
+      "www": {
+        "files": {
+          "index.html": "<html>\n  <!-- S3CR3T: CHE{HTML_IS_NOT_A_PROGRAMMING_LANGUAGE} -->\n  <blink>Under construction</blink>\n</html>"
+        }
+      }
+    },
+    "usr": {
+      "games": {
+        "files": {
+          "fortune": "#!/bin/bash\necho 'You will find a hidden flag today!'"
+        }
+      }
+    },
+    "tmp": {
+      "files": {
+        "warning.txt": "DANGER ZONE!\nFiles here self-destruct every 10 seconds!",
+        "emergency_kit": {
+          "files": {
+            "README": "In case of emergency:\n1) Panic\n2) ??\n3) Profit"
+          }
+        }
+      }
+    },
+    "media": {
+      "files": {
+        "floppy": {
+          "files": {
+            "retro.txt": "LOAD \"*\",8,1\nREADY.\nRUN"
+          }
+        },
+        "matrix": {
+          "files": {
+            "blue_pill.txt": "Wake up Neo...",
+            "red_pill.txt": "Follow the white rabbit"
+          }
+        }
+      }
+    },
+    "opt": {
+      "files": {
+        "skynet": {
+          "files": {
+            "README": "Project discontinued\n(Or is it?)"
+          }
+        },
+        "holodeck": {
+          "files": {
+            "programs": {
+              "files": {
+                "warp_drive.conf": "Warp factor 9.9 engaged!",
+                "transporter.log": "Energizing..."
+              }
+            }
+          }
+        }
+      }
+    },
+    "root": {
+      "files": {
+        ".ash_history": "sudo su\nrm -rf /\n# Oops...",
+        "flag.txt": "CHE{CONGRATS_YOU_ROOTED_THE_SYSTEM}",
+        "treasure_map.png": "PK0304 (fake PNG header)"
+      }
+    },
+    ".hidden": {
+      "files": {
+        "secret.txt": "You found the hidden directory!",
+        "easter_egg.bin": "01000110 01001100 01000001 01000111",
+        "riddle.txt": "What has keys but can't open locks?\n\nAnswer: Piano (and this filesystem!)"
+      }
+    },
+    "mnt": {
+      "files": {
+        "area51": {
+          "files": {
+            "alien.txt": "👽 We come in peace (but take your flags)",
+            "roswell.log": "1947-07-08: Weather balloon incident reported"
+          }
+        }
+      }
+    },
+    "lib": {
+      "files": {
+        "security": {
+          "files": {
+            "magic": "0 string CTF CTF file\n!:mime CTF"
+          }
+        }
+      }
+    },
+    "srv": {
+      "files": {
+        "ctf": {
+          "files": {
+            "challenge1.txt": "Decode: VEhFLUZMQUctSVNfSEVSRQ==",
+            "solution.txt": "base64 decoded: THE-FLAG-IS_HERE"
+          }
+        }
+      }
+    },
+    "proc": {
+      "files": {
+        "1": {
+          "files": {
+            "status": "Name:\tinit\nState:\tS (sleeping)\nFlags:\t0x00000000"
+          }
+        }
+      }
     }
+  }
 }

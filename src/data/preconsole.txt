@@ -10,9 +10,8 @@ $$$
 $$$                                                             Welcome to CYBER HUMANUM'EST 2025
 $$$
 $$$
-$$$
 $$$An immersive cyberwar exercise in Nancy, France
-$$$Organized and executed by (I don't know broooooo)
+$$$Organized by the Nancy Defense Base and Lorraine INP, under the aegis of the Commandement de la Cyberdéfense (COMCYBER) and the University of Lorraine
 $$$
 $$$Initializing event protocols...
 $$$Running 'make' to compile the cyber battleground code...

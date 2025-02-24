@@ -2,62 +2,150 @@ import React, { useState, useEffect, useRef } from "react";
 import raw_text from "../data/console.txt";
 import file_info from "../data/files.json";
 import hello_app_text from "../data/hello_app.txt";
+import "../css/Console.scss";
 
-import '../css/Console.scss';
 
 let hello_app = [""];
 
-const Console = ({
-  name = "user",
-  machine = "server",
-  fast = false, 
-}) => {
+const Console = ({ name = "user", machine = "server", fast = false }) => {
   const NORMAL_SPEED = 70;
   const FAST_SPEED = 1;
+  let [matrixMode, setMatrixMode] = useState(false);
+  let [currentDir, setCurrentDir] = useState("");
+  let [secretCounter, setSecretCounter] = useState(0);
+
+  const SECRET_MESSAGES = [
+    "01010100 01101000 01100101 00100000 01000011 01010100 01000110 00100000 01101001 01110011 00100000 01100001 00100000 01101100 01101001 01100101",
+    "There's no place like 127.0.0.1",
+    "SUPER_SECRET: Pizza time!",
+    "System breach detected... just kidding!",
+  ];
 
 
-  let files = [];
-  Object.keys(file_info["files"]).forEach((key) => {
-    files.push(key);
-  });
+    useEffect(() => {
+      fetch(hello_app_text)
+        .then((res) => res.text())
+        .then((text) => {
+          console.log(text);
+          hello_app[0] = text;
+          console.log(hello_app);
+        });
+    }, []);
 
-  useEffect(() => {
-    fetch(hello_app_text)
-      .then((res) => res.text())
-      .then((text) => {
-        console.log(text);
-        hello_app[0] = text;
-        console.log(hello_app);
-      });
-  }, []);
+  let directoryStructure = file_info["files"];
 
-  //commands available
   const commands_available = {
     ls: [
       (args) => {
-        return files;
+        const pathParts = currentDir.split("/").filter((p) => p);
+        console.log(currentDir);
+        let current = directoryStructure;
+        for (const part of pathParts) {
+          current = current[part];
+          if (!current) break;
+        }
+
+        if (!current) return ["Directory not found"];
+
+        const items = [];
+        if (current.files) items.push(...Object.keys(current.files));
+        items.push(...Object.keys(current).filter((k) => k !== "files"));
+        return items.map((item) => (item.endsWith(".txt") ? item : `${item}/`));
       },
-      "command to list file",
+      "List directory contents",
     ],
-    echo: [
+
+    cd: [
       (args) => {
-        return [args.filter((e, i) => i > 0).join(" ")];
+        if (args.length < 2) return ["cd: missing argument"];
+        const target = args[1];
+
+        if (target === "..") {
+          currentDir = currentDir.split("/").slice(0, -1).join("/");
+          setCurrentDir(currentDir);
+          return [];
+        }
+
+        const newPath = currentDir ? `${currentDir}/${target}` : target;
+        const pathParts = newPath.split("/").filter((p) => p);
+        let current = directoryStructure;
+
+        for (const part of pathParts) {
+          current = current[part];
+          if (!current) return [`cd: ${target}: No such directory`];
+        }
+        console.log("path", newPath);
+        currentDir = newPath;
+        setCurrentDir(newPath);
+        return [];
       },
-      "command to display a text",
+      "Change directory",
     ],
+
     cat: [
       (args) => {
-        if (
-          args.length > 1 &&
-          Object.keys(file_info["files"]).indexOf(args[1]) != -1
-        ) {
-          let text = file_info["files"][args[1]];
-          //text = text.replace("{score}", score[0]);
-          return text.split("\n");
+        if (args.length < 2) return ["cat: missing file operand"];
+
+        const pathParts = currentDir.split("/").filter((p) => p);
+        let current = directoryStructure;
+        for (const part of pathParts) {
+          current = current[part];
+          if (!current) return ["File not found"];
         }
-        return ["Error file not found"];
+
+        const fileName = args[1];
+        if (!current.files?.[fileName])
+          return [`cat: ${fileName}: No such file`];
+
+        const content = current.files[fileName];
+        return content.split("\n");
       },
-      "command to read file",
+      "Display file contents",
+    ],
+
+    sudo: [
+      () => [
+        "sudo: You are not in the sudoers file. This incident will be reported.",
+      ],
+      "Pretend to have superpowers",
+    ],
+
+    make: [
+      (args) => {
+        if (args[1] === "love")
+          return ["make: *** No rule to make target 'love'.  Stop."];
+        return ["g++ -o app main.cpp -Wall -Wextra -pedantic"];
+      },
+      "Compile source code",
+    ],
+
+    matrix: [
+      () => {
+        matrixMode = !matrixMode;
+        setMatrixMode(matrixMode);
+        return [!matrixMode ? "Exiting Matrix..." : "Entering Matrix..."];
+      },
+      "Simulate the Matrix (Easter egg)",
+    ],
+
+    greet: [
+      () => ["Hello there! General Kenobi!"],
+      "Friendly greeting (Easter egg)",
+    ],
+
+    telnet: [
+      () => [
+        "Connecting to towel.blinkenlights.nl...",
+        "Launching Star Wars Episode IV...",
+        "( (  _\\\n" +
+          " ) )))  \\\\      )\\ _)\n" +
+          "(--      \\\\    / /(_\\\n" +
+          " (  _ _   \\\\  / / _(_\n" +
+          "  )\\   )\\   \\/ / (_)\n" +
+          " /  \\ /  \\     / /",
+        "Use the Force, Luke!",
+      ],
+      "Watch Star Wars in ASCII",
     ],
     "./cyberhumanum_app": [
       (args) => {
@@ -66,13 +154,6 @@ const Console = ({
         return text.split("\n");
       },
       "cyberhumanum_app",
-    ],
-    make: [
-      (args) => {
-        let text = "g++ -o app main.cpp -lInsaneLibrairy";
-        return text.split("\n");
-      },
-      "compilation",
     ],
     clear: [
       (args) => {
@@ -86,10 +167,71 @@ const Console = ({
       },
       "Clean the screen",
     ],
+    reload: [
+      (args) => {
+        setTimeout(() => {
+          start = false;
+          setStart(false);
+
+          listeLine = [];
+          setListeLine(listeLine);
+
+          resultList = [false];
+          setResultList(resultList);
+
+          displayLines = [""];
+          setDisplayLines(displayLines);
+
+          currentIndex = 0;
+          setCurrentIndex(currentIndex);
+
+          currentLine = "";
+          setCurrentLine(currentLine);
+
+          liveCommand = "";
+          setLiveCommand(liveCommand);
+
+          focusTerminal = true;
+          setFocusTerminal(focusTerminal);
+
+          windowEventReady = false;
+          setWindowEventReady(windowEventReady);
+
+          window.removeEventListener("keydown", handleKeydown);
+
+          fetch(raw_text)
+            .then((r) => r.text())
+            .then((text) => {
+              listeLine = text.split("\n");
+              setListeLine(listeLine);
+            });
+        }, 0);
+        return [];
+      },
+      "Allow you to reload the animation of this screen",
+    ],
   };
 
-  //directory
-  //use of file_info
+  useEffect(() => {
+    const handleSecret = () => {
+      if (secretCounter >= 3) {
+        secretCounter = 0;
+        setSecretCounter(secretCounter);
+        return SECRET_MESSAGES[
+          Math.floor(Math.random() * SECRET_MESSAGES.length)
+        ];
+      }
+      secretCounter += 1;
+      setSecretCounter(secretCounter);
+      return [];
+    };
+
+    commands_available["42"] = [handleSecret, "The answer to everything"];
+    commands_available["konami"] = [
+      () => ["↑↑↓↓←→←→BA: Secret mode activated!", "But nothing happened..."],
+      "Classic code",
+    ];
+  }, [secretCounter]);
 
   let [listeLine, setListeLine] = useState([]);
   let [resultList, setResultList] = useState([false]);
@@ -97,7 +239,7 @@ const Console = ({
   let [currentIndex, setCurrentIndex] = useState(0);
   let [currentLine, setCurrentLine] = useState("");
   let [start, setStart] = useState(true);
-  let [speed, setSpeed] = useState((fast ? FAST_SPEED : NORMAL_SPEED));
+  let [speed, setSpeed] = useState(fast ? FAST_SPEED : NORMAL_SPEED);
   let [windowEventReady, setWindowEventReady] = useState(false);
   let [focusTerminal, setFocusTerminal] = useState(true);
 
@@ -115,27 +257,30 @@ const Console = ({
       ? myRef.current.scrollTo(0, lastRef.current.offsetTop)
       : false;
 
-  // useEffect(()=>{
-  //     window.addEventListener('keydown', (event) => {
-  //         if(windowEventReady){
-  //             event.preventDefault();
-  //             let keyString = String(event.key);
-  //             if(keyString.length==1){
-  //                 liveCommand = liveCommand+keyString;
-  //             }else if(keyString=="Backspace"){
-  //                 liveCommand = liveCommand.substring(0,liveCommand.length-1);
-  //             }else if(keyString=="Enter"){
-  //                 displayLines[displayLines.length-1] = liveCommand;
-  //                 displayLines.push("");
-  //                 resultList.push(false);
-  //                 setResultList(resultList);
-  //                 setDisplayLines(displayLines);
-  //                 liveCommand = "";
-  //             }
-  //             setLiveCommand(liveCommand);
-  //         }
-  //     });
-  // },[]);
+  const handleKeydown = async (event) => {
+    event.preventDefault();
+    let keyString = String(event.key);
+
+    console.log(keyString);
+    if (keyString.length == 1) {
+      liveCommand = liveCommand + keyString;
+    } else if (keyString == "Backspace") {
+      liveCommand = liveCommand.substring(0, liveCommand.length - 1);
+    } else if (keyString == "Enter") {
+      enterFunction();
+    }
+    setLiveCommand(liveCommand);
+
+    //banger
+    setWindowEventReady((state) => !state);
+
+    //a chaque fois on focus ce qu'on écrit
+    setTimeout(() => {
+      //on descend le focus
+      setDisplayLines(displayLines);
+      updateScroll();
+    }, 100);
+  };
 
   const enterFunction = async () => {
     //on initialise la ligne qu'on était en train d'écrire
@@ -236,30 +381,7 @@ const Console = ({
         updateScroll();
       }, 100);
 
-      window.addEventListener("keydown", async (event) => {
-        event.preventDefault();
-        let keyString = String(event.key);
-
-        console.log(keyString);
-        if (keyString.length == 1) {
-          liveCommand = liveCommand + keyString;
-        } else if (keyString == "Backspace") {
-          liveCommand = liveCommand.substring(0, liveCommand.length - 1);
-        } else if (keyString == "Enter") {
-          enterFunction();
-        }
-        setLiveCommand(liveCommand);
-
-        //banger
-        setWindowEventReady((state) => !state);
-
-        //a chaque fois on focus ce qu'on écrit
-        setTimeout(() => {
-          //on descend le focus
-          setDisplayLines(displayLines);
-          updateScroll();
-        }, 100);
-      });
+      window.addEventListener("keydown", handleKeydown);
 
       //on lance la commande help à la fin
       displayLines.push("");
@@ -308,29 +430,28 @@ const Console = ({
   }
 
   return (
-    <div ref={myRef} className="Console">
-      {displayLines.map((elt, i, array) => {
-        return (
-          <code ref={i == array.length - 1 ? lastRef : null} key={i}>
-            {!resultList[i] && (
-              <div className="preCommand">
-                <p className="nameCommand">
-                  {name}@{machine}
-                </p>
-                :<mark>~$</mark>
-              </div>
-            )}
-            {i >= listeLine.length - 1 &&
-            i == displayLines.length - 1 &&
-            !resultList[i] ? (
-              <pre>{liveCommand}</pre>
-            ) : (
-              <pre>{elt}</pre>
-            )}
-            {i == array.length - 1 && <div id="cursor"></div>}
-          </code>
-        );
-      })}
+    <div ref={myRef} className={`Console ${matrixMode ? "matrix-mode" : ""}`}>
+      {/* Keep existing rendering logic */}
+      {displayLines.map((elt, i, array) => (
+        <code ref={i === array.length - 1 ? lastRef : null} key={i}>
+          {!resultList[i] && (
+            <div className="preCommand">
+              <p className="nameCommand">
+                {name}@{machine}
+              </p>
+              :<mark>~$</mark>
+            </div>
+          )}
+          {i >= listeLine.length - 1 &&
+          i == displayLines.length - 1 &&
+          !resultList[i] ? (
+            <pre>{liveCommand}</pre>
+          ) : (
+            <pre>{elt}</pre>
+          )}
+          {i == array.length - 1 && <div id="cursor"></div>}
+        </code>
+      ))}
     </div>
   );
 };
