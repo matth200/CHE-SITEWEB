@@ -8,6 +8,8 @@ import TermPage from './Page/Terminal';
 import ManoPage from './Page/ManoPage';
 import TristanPage from './Page/TristanPage';
 import BaptPage from './Page/BaptPage';
+import MatthPage from './Page/MatthPage';
+import GaelPage from './Page/GaelPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +21,8 @@ root.render(
         <Route path="/mano" element={<ManoPage />} />
         <Route path="/bapt" element={<BaptPage />} />
         <Route path="/tristan" element={<TristanPage />}/>
+        <Route path="/matth" element={<MatthPage />}/>
+        <Route path="/gael" element={<GaelPage />} />
         <Route path="*" element={<ErrorPage />}/>
       </Routes>
     </BrowserRouter>

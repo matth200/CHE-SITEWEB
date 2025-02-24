@@ -8,6 +8,6 @@ export default function BaptPage(){
 
     return <div className='Page BaptPage'>
         <ButtonBack/>
-        <Typewriter text="Page de Baptiste" speed={50}/>
+        <Typewriter text="LE CYBERHUMANUM'EST" speed={50}/>
     </div>
 }
