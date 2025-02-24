@@ -10,73 +10,86 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
+import OutputCrawlerImg from "../image/output_crawler.png"
+import CamembertImg from "../image/camembert.jpg"
 
 export default function GaelPage(){
     return (
-        <div className="Page GaelPage">
+        <div className="GaelPage">
             <ButtonBack/>
             <Typewriter text="CYBERHUMANUM'EST 2025 - NOTRE PREPARATION" speed={50}/>
             <div className="body">
-                <div className="left">
+                <div className="left bahnschrift">
                     <h2>NOTRE PARCOURS LIO</h2>
                     <p>
                         En tant qu'étudiant à Polytech Nancy en double diplome sécurité
-                        informatique, la préparation pour le CyberHumanum'est (la plus
-                        grande compétition de cybersécurité étudiante d'Europe) a commencé
-                        dès septembre 2024. Avec mon équipe LIO (Lutte Offensive), nous nous
-                        sommes entraînés avec des sessions sur la plateforme root-me.
+                        informatique, la préparation pour le CyberHumanum'est a commencé
+                        dès septembre 2024. Avec notre équipe LIO (Lutte Offensive), nous nous
+                        sommes entraînés principalement via plusieurs sessions root-me.
+                        Nos sommes également passé par des plateformes telles que TryHackMe pour
+                        des notions inconnues afin de les assimiler plus facilement.
                     </p>
 
                     <Timeline position="alternate">
                         <TimelineItem>
                             <TimelineSeparator>
-                                <TimelineDot color="success"/>
+                                <TimelineDot color="error"/>
                                 <TimelineConnector/>
                             </TimelineSeparator>
-                            <TimelineContent>
+                            <TimelineContent className="bahnschrift">
                                 <strong>Septembre 2024</strong>
                                 <br/>
-                                Entrainement root-me
+                                CTF Root-Me, début de l'entrainement personnel
                             </TimelineContent>
                         </TimelineItem>
                         <TimelineItem>
                             <TimelineSeparator>
-                                <TimelineDot color="success"/>
+                                <TimelineDot color="error"/>
                                 <TimelineConnector/>
                             </TimelineSeparator>
-                            <TimelineContent>
+                            <TimelineContent className="bahnschrift">
                                 <strong>Octobre 2024</strong>
                                 <br/>
-                                Mise en place de réunion
+                                Mise en place de réunions
                                 <br/>
                                 Mise en place des équipes
                             </TimelineContent>
                         </TimelineItem>
                         <TimelineItem>
                             <TimelineSeparator>
-                                <TimelineDot color="success"/>
+                                <TimelineDot color="error"/>
                                 <TimelineConnector/>
                             </TimelineSeparator>
-                            <TimelineContent>
+                            <TimelineContent className="bahnschrift">
                                 <strong>Novembre 2024</strong>
                                 <br/>
-                                Entrainement root-me + spécialisé en fonction de son rôle (LIO, LID, L2I)
+                                Entrainement Root-Me axé en fonction de son rôle (LIO ou LID)
                             </TimelineContent>
                         </TimelineItem>
                         <TimelineItem>
                             <TimelineSeparator>
-                                <TimelineDot color="success"/>
+                                <TimelineDot color="error"/>
                             </TimelineSeparator>
-                            <TimelineContent>
+                            <TimelineContent className="bahnschrift">
                                 <strong>Décembre 2024</strong>
                                 <br/>
-                                Finalisation de nos outils développées pour l'occasion
+                                Finalisation de nos outils personnels pour l'évenement
                             </TimelineContent>
                         </TimelineItem>
                     </Timeline>
                 </div>
+                <div className="right-img bahnschrift">
+                    <img src={OutputCrawlerImg} alt="Crawler"/>
+                    Output de notre crawler afin de découvrir l'arborescence des sites Web.
+                </div>
+            </div>
 
-                <div className="right">
+            <div className="body">
+                <div className="left-img bahnschrift">
+                    <img src={CamembertImg} alt="Graphique"/>
+                    Répartition des sous équipes chez Cryptanga
+                </div>
+                <div className="right bahnschrift">
                     <h2>PLAN D'ACTION</h2>
                     <p>
                         Notre équipe CRYPTANGA a tout misé sur la collaboration
@@ -120,7 +133,8 @@ export default function GaelPage(){
                 </div>
             </div>
 
-            <div className="bottom">
+
+            <div className="bottom bahnschrift">
                 <h3>Notre Defi Technique</h3>
                 <p>
                     Lors de la phase d'entrainement, nous n'avions pas beaucoup
