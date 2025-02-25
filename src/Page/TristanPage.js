@@ -17,11 +17,11 @@ export default function CyberHumanumAwardsPage(){
     return (
         <div className="Page CyberHumanumAwardsPage">
             <ButtonBack/>
-            <Typewriter text="CYBERHUMANUM'EST 2025 - CÉRÉMONIE DE REMISE DES PRIX" speed={50}/>
+            <Typewriter text="CYBERHUMANUM'EST 2025 - CEREMONIE DE REMISE DES PRIX" speed={50}/>
             <div className="body">
                 <div className="left">
-                    <h2>LA CÉRÉMONIE</h2>
-                    <p>
+                    <h2>LA CEREMONIE</h2>
+                    <p className="bahnschrift">
                         La cérémonie de remise des prix du CyberHumanum'Est 2025 a marqué la fin d'une intense semaine de compétition.
                         Les équipes les plus performantes ont été récompensées pour leurs prouesses en attaque, défense, gestion de crise
                         et lutte d’influence.
@@ -33,7 +33,7 @@ export default function CyberHumanumAwardsPage(){
                                 <TimelineDot color="success"/>
                                 <TimelineConnector/>
                             </TimelineSeparator>
-                            <TimelineContent>
+                            <TimelineContent className="bahnschrift">
                                 <strong>31 Janvier 2025</strong>
                                 <br/>
                                 Début de la cérémonie à l'IUT Nancy Brabois
@@ -44,7 +44,7 @@ export default function CyberHumanumAwardsPage(){
                                 <TimelineDot color="success"/>
                                 <TimelineConnector/>
                             </TimelineSeparator>
-                            <TimelineContent>
+                            <TimelineContent className="bahnschrift">
                                 <strong>Annonce des Lauréats</strong>
                                 <br/>
                                 Remise des prix pour les différentes catégories
@@ -55,7 +55,7 @@ export default function CyberHumanumAwardsPage(){
                                 <TimelineDot color="success"/>
                                 <TimelineConnector/>
                             </TimelineSeparator>
-                            <TimelineContent>
+                            <TimelineContent className="bahnschrift">
                                 <strong>Discours du Colonel William Dupuy</strong>
                                 <br/>
                                 Félicitations aux participants et mise en avant des performances
@@ -65,7 +65,7 @@ export default function CyberHumanumAwardsPage(){
                             <TimelineSeparator>
                                 <TimelineDot color="success"/>
                             </TimelineSeparator>
-                            <TimelineContent>
+                            <TimelineContent className="bahnschrift">
                                 <strong>Clôture et Forum de Recrutement</strong>
                                 <br/>
                                 Échange entre participants et entreprises partenaires
@@ -76,40 +76,42 @@ export default function CyberHumanumAwardsPage(){
 
                 <div className="right">
                     <h2>LES VAINQUEURS</h2>
-                    <p>
-                        Voici les équipes qui ont marqué cette édition 2025 :
-                    </p>
+                    <div className="bahnschrift">
+                        <p>
+                            Voici les équipes qui ont marqué cette édition 2025 :
+                        </p>
 
-                    <ul className="team-list">
-                        <li className="offensive">
-                            <strong>Meilleure attaque : APT54</strong>
-                        </li>
-                        <li className="defensive">
-                            <strong>Meilleure défense : CRYPTANGA</strong>
-                        </li>
-                        <li className="influence">
-                            <strong>Meilleure lutte d’influence : ANUMÉRIC</strong>
-                        </li>
-                        <li className="crisis">
-                            <strong>Meilleure gestion de crise : ANUMÉRIC</strong>
-                        </li>
-                        <li className="scad-hack">
-                            <strong>Prix Scad'Hack : APT54</strong>
-                        </li>
-                        <li className="overall">
-                            <strong>Meilleure équipe de l'exercice : CRYPTANGA</strong>
-                        </li>
-                    </ul>
-
+                        <ul className="team-list">
+                            <li className="offensive">
+                                <strong>Meilleure attaque : APT54</strong>
+                            </li>
+                            <li className="defensive">
+                                <strong>Meilleure défense : CRYPTANGA</strong>
+                            </li>
+                            <li className="influence">
+                                <strong>Meilleure lutte d’influence : ANUMÉRIC</strong>
+                            </li>
+                            <li className="crisis">
+                                <strong>Meilleure gestion de crise : ANUMÉRIC</strong>
+                            </li>
+                            <li className="scad-hack">
+                                <strong>Prix Scad'Hack : APT54</strong>
+                            </li>
+                            <li className="overall">
+                                <strong>Meilleure équipe de l'exercice : CRYPTANGA</strong>
+                            </li>
+                        </ul>
+                    </div>
                     <img src={remisePrix} alt="Remise des prix"/>
-                    <p>Récompenses des lieutenants et capitaines</p>
+                    <p className="bahnschrift">Récompenses des lieutenants et capitaines</p>
+
 
                 </div>
             </div>
 
             <div className="bottom">
-                <h3>UNE EXPÉRIENCE UNIQUE</h3>
-                <p>
+                <h3>UNE EXPERIENCE UNIQUE</h3>
+                <p className="bahnschrift">
                     Le CyberHumanum'Est 2025 a permis aux participants de se confronter à des scénarios cyber réalistes,
                     mettant à l’épreuve leurs compétences techniques et stratégiques. Cette édition a renforcé les liens
                     entre étudiants, professionnels et institutions engagées dans la cybersécurité.
