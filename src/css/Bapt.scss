@@ -1,0 +1,62 @@
+img {
+  border-radius: 10px;
+}
+
+  
+  .image-small {
+    width: 30%;
+    height: auto;
+  }
+
+
+  .image-normal {
+    width: 55%;
+    height: auto;
+  }
+.KickOffPage {
+  margin: 50px;
+}
+
+.KickOffPage h2 {
+  text-align: center;
+}
+
+.left, .right {
+  flex: 1; 
+  margin: 10px; 
+}
+
+.colonnedeux {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+}
+
+.colonnedeux h2 {
+  text-align: center; 
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100%; 
+}
+
+.boxcenter {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  box-sizing: border-box; 
+}
+
+.boxcenter img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+ul, li, p{
+  font-family: bahnschrift;
+}
