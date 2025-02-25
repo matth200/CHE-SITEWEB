@@ -12,6 +12,10 @@ import ScanImg from "../image/scan.jpg"
 import TablesImg from "../image/IMG_5495.jpg";
 import AdaImg from "../image/IMG_5492.jpg"
 import DbImg from "../image/IMG_5491.jpg"
+import BlackoutImg from "../image/IMG_5494.jpg"
+import RationImg1 from "../image/ration2.jpg"
+import RationImg2 from "../image/ration3.jpg"
+import RationImg3 from "../image/ration4.jpg"
 
 const settings = {
     dots: true,
@@ -90,6 +94,38 @@ export default function MatthPage() {
                             reboot en boucle, et si par chance la victime arrive à sortir de la boucle nous obtenons une backdoor sur son PC.
                             Malheuresement, nos attaques ont été infructueuses et on très souvent terminé par la case prison.
                         </p>
+                    </div>
+                </div>
+                <div className="thirdSection">
+                    <h2>Les rations de combat</h2>
+                    <p className="bahnschrift">
+                        Un des moments clés du CHE est le fameux repas du mardi soir, les rations de combat.
+                        Pour la première fois, nous avons pu goûter à des rations de combat françaises, qui sont de bien
+                        meilleur qualité
+                        que les rations des autres pays.<br/>
+                        Malgré le vent et les intempéries, nous avons pu faire chauffer tant bien que mal nos repas qui
+                        unt été au passage
+                        appréciés par la grande majorité d'entre nous.
+                    </p>
+                    <div className="img-container">
+                        <img src={RationImg1} alt="Ration 1"/>
+                        <img src={RationImg2} alt="Ration 1"/>
+                        <img src={RationImg3} alt="Ration 1"/>
+                    </div>
+                </div>
+                <div className="fourthSection">
+                    <div className="text-blackout">
+                        <h2>Le blackout</h2>
+                        <p className="bahnschrift">A partir de mardi soir 22h et pendant toute la nuit,
+                        nous avons été plongés dans le noir, on appelle ça le blackout.<br/>
+                        Avec seuls nos écrans et nos frontales, nous avons passé la nuit dans le noir total,
+                        ce qui outre une ambiance plutôt sympa à donné lieu à plusieurs attaques: espionnage,
+                        dissimulation de micros, infiltration...
+                        Ce blackout à également été l'occasion de récupérer des informations dans le téléphone de l'ambassadeur,
+                        qui avait un code PIN qu'on pourrait qualifier d'assez "classique". </p>
+                    </div>
+                    <div className="img-blackout">
+                        <img src={BlackoutImg} alt="Blackout"/>
                     </div>
                 </div>
             </div>
