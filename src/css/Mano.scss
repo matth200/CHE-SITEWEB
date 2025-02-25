@@ -1,10 +1,15 @@
 .ManoPage {
-  margin-top: 100px;
+  margin-top: 120px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  img{
+    border-radius: 10px;
+  }
 
 
   .body {
@@ -35,33 +40,6 @@
     flex-direction: column;
   }
 
-  .right-img {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    flex-direction: column;
-    color: grey;
-
-    img {
-      border-radius: 15px;
-      margin-bottom: 10px;
-    }
-  }
-
-  .left-img {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    flex-direction: column;
-    color: grey;
-
-    img {
-      border-radius: 15px;
-      margin-bottom: 10px;
-    }
-  }
-
-
   .bottom {
     display: flex;
     flex-direction: column;
@@ -79,7 +57,7 @@
   p {
     text-align: center;
     font-size: 18px;
-    font-family: "Bahnschrift";
+    font-family: "Bahnschrift", serif;
   }
 }
 

@@ -1,25 +1,24 @@
 .KickOffPage{
+
+  margin: 100px 100px 100px 100px;
+
   img {
     border-radius: 10px;
   }
-
 
   .image-small {
     width: 30%;
     height: auto;
   }
 
-
   .image-normal {
     width: 55%;
     height: auto;
   }
 
-  margin: 50px;
-
-
   h2 {
     text-align: center;
+    margin-top: 50px;
   }
 
   .left, .right {
@@ -59,7 +58,7 @@
   }
 
   ul, li, p{
-    font-family: bahnschrift;
+    font-family: "Bahnschrift", serif;
   }
 }
 
