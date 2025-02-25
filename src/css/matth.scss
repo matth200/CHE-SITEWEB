@@ -77,7 +77,7 @@
 
     .thirdSection {
       width: 70%;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
       .img-container {
         margin-top: 30px;
         display: flex;
@@ -97,6 +97,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 50px;
       .text-blackout{
         width: 35%;
         margin-left: 5%;
@@ -109,6 +110,45 @@
           max-height: 400px;
           border-radius: 10px;
         }
+      }
+    }
+
+    .fifthSection {
+      width: 70%;
+      margin-bottom: 60px;
+      .img-container {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        img {
+          max-height: 250px;
+          border-radius: 10px;
+        }
+      }
+    }
+
+    .sixthSection {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+      .img-bank{
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        img {
+          max-height: 400px;
+          border-radius: 10px;
+        }
+      }
+      .text-bank{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 35%;
       }
     }
   }
