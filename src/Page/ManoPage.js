@@ -10,7 +10,7 @@ export default function ManoPage(){
 
     return <div className='Page ManoPage'>
         <ButtonBack/>
-        <Typewriter text="LE RETEX" speed={50}/>
+        <Typewriter text="CYBERHUMANUM'EST 2025 - LE RETEX" speed={50}/>
         <div className="body">
             <div className="left bahnschrift">
                 <p>
@@ -40,9 +40,9 @@ export default function ManoPage(){
             </div>
         </div>
         <div className='conclusion'>
-            <p>Les résultats de l'évènement ont été gardés secrets jusqu'au<br/><br/>lendemain pour la tant attendue </p>
+            <p>Les résultats de l'évènement ont été gardés secrets jusqu'au lendemain pour la tant attendue </p>
             <Link to="/tristan">
-                <div>🏆 Cérémonie de Remises des Prix 🏆</div>
+                <div>🏆 Ceremonie de Remises des Prix 🏆</div>
             </Link>
         </div>
     </div>

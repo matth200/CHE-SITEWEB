@@ -19,9 +19,9 @@ export default function GaelPage(){
             <ButtonBack/>
             <Typewriter text="CYBERHUMANUM'EST 2025 - NOTRE PREPARATION" speed={50}/>
             <div className="body">
-                <div className="left bahnschrift">
+                <div className="left">
                     <h2>NOTRE PARCOURS LIO</h2>
-                    <p>
+                    <p className="bahnschrift">
                         En tant qu'étudiant à Polytech Nancy en double diplome sécurité
                         informatique, la préparation pour le CyberHumanum'est a commencé
                         dès septembre 2024. Avec notre équipe LIO (Lutte Offensive), nous nous
@@ -89,14 +89,14 @@ export default function GaelPage(){
                     <img src={CamembertImg} alt="Graphique"/>
                     Répartition des sous équipes chez Cryptanga
                 </div>
-                <div className="right bahnschrift">
+                <div className="right">
                     <h2>PLAN D'ACTION</h2>
-                    <p>
+                    <p className="bahnschrift">
                         Notre équipe CRYPTANGA a tout misé sur la collaboration
                         entre les pôles :
                     </p>
 
-                    <ul className="team-list">
+                    <ul className="team-list bahnschrift">
                         <li className="lio">
                             <strong>LIO (Notre équipe offensive)</strong>
                             <br/>
@@ -134,9 +134,9 @@ export default function GaelPage(){
             </div>
 
 
-            <div className="bottom bahnschrift">
+            <div className="bottom">
                 <h2>Notre Defi Technique</h2>
-                <p>
+                <p className="bahnschrift">
                     Lors de la phase d'entrainement, nous n'avions pas beaucoup
                     d'information sur le réseau sur lequel nous allions atterir. Nous
                     devions donc élargir nos connaissances au maximum pour faire face à
