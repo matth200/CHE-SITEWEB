@@ -66,8 +66,9 @@
         (args) => {
           confetti = !confetti;
           setConfetti(confetti);
-          return [confetti?"Confetti":"no confetti"]
-        }, "Let's partyyyyy!!!"
+          return [confetti ? "Confetti" : "no confetti"];
+        },
+        "Let's partyyyyy!!!",
       ],
       cd: [
         (args) => {
@@ -101,6 +102,13 @@
           return [];
         },
         "Change directory",
+      ],
+
+      pwd: [
+        () => {
+          return ["/" + currentDir];
+        },
+        "Look in what directory you are in",
       ],
 
       cat: [
