@@ -1,0 +1,43 @@
+.CyberHumanumAwardsPage{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .body{
+      display: flex;
+      flex-direction: row;
+      width: calc(100% - 2*20px);
+      height: 60%;
+      padding: 20px;
+      gap: 20px;
+    }
+    .left{
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      h2{
+        text-align: center;
+      }
+      p{
+        text-align: center;
+      }
+    }
+    .right{
+      width: 40%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      img{
+        width: 100%;
+        max-width: 360px;
+        border-radius: 10px;
+      }
+    }
+    
+    .bottom{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+}
+      
