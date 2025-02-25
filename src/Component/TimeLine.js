@@ -92,7 +92,7 @@ const Timeline = () => {
                 <span>03</span>
               </div>
               <h2>
-                <span className="small">28/01/2025</span> Les Challenges
+                <span className="small">28/01/2025</span>L'Event
               </h2>
             </div>
             <div className="body">

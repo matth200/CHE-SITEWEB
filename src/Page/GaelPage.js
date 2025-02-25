@@ -26,7 +26,7 @@ export default function GaelPage(){
                         informatique, la préparation pour le CyberHumanum'est a commencé
                         dès septembre 2024. Avec notre équipe LIO (Lutte Offensive), nous nous
                         sommes entraînés principalement via plusieurs sessions root-me.
-                        Nos sommes également passé par des plateformes telles que TryHackMe pour
+                        Nous sommes également passé par des plateformes telles que TryHackMe pour
                         des notions inconnues afin de les assimiler plus facilement.
                     </p>
 
@@ -135,7 +135,7 @@ export default function GaelPage(){
 
 
             <div className="bottom bahnschrift">
-                <h3>Notre Defi Technique</h3>
+                <h2>Notre Defi Technique</h2>
                 <p>
                     Lors de la phase d'entrainement, nous n'avions pas beaucoup
                     d'information sur le réseau sur lequel nous allions atterir. Nous
