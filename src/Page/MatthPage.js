@@ -16,6 +16,10 @@ import BlackoutImg from "../image/IMG_5494.jpg"
 import RationImg1 from "../image/ration2.jpg"
 import RationImg2 from "../image/ration3.jpg"
 import RationImg3 from "../image/ration4.jpg"
+import GeoideImg from "../image/geoide-nous.jpg"
+import CargoImg from "../image/cargo.jpg"
+import TrainImg from "../image/train.jpg"
+import BankImg from "../image/bank.jpg"
 
 const settings = {
     dots: true,
@@ -40,12 +44,17 @@ export default function MatthPage() {
                             plus d'informations sur notre réseau et surtout nos vulnérabilités.
                             La partie LID de l'équipe avait accès à notre réseau, alors que notre partie offensive
                             était localisée sur le réseau des anumérics.
-                            Nous avons alors essayé de cartographier le plus précisément possible chaque partie de l'infrastructure:
+                            Nous avons alors essayé de cartographier le plus précisément possible chaque partie de
+                            l'infrastructure:
                             <ul>
-                                <li>La LID s'est occupée de la cartographie de notre réseau grâce notamment à des scans</li>
+                                <li>La LID s'est occupée de la cartographie de notre réseau grâce notamment à des
+                                    scans
+                                </li>
                                 <li>La LIO s'est empressé de chercher des vulnérabilités et des
-                                domaines dans le réseau adverse afin de patcher ces potentielles même vulnérabilités dans notre
-                                réseau.</li>
+                                    domaines dans le réseau adverse afin de patcher ces potentielles même vulnérabilités
+                                    dans notre
+                                    réseau.
+                                </li>
                             </ul>
                         </p>
                     </div>
@@ -58,13 +67,13 @@ export default function MatthPage() {
                     <div className="img-attacks">
                         <Slider {...settings}>
                             <div>
-                                <img src={AdaImg} alt="Attack 1" />
+                                <img src={AdaImg} alt="Attack 1"/>
                             </div>
                             <div>
-                                <img src={DbImg} alt="Attack 2" />
+                                <img src={DbImg} alt="Attack 2"/>
                             </div>
                             <div>
-                                <img src={TablesImg} alt="Attack 3" />
+                                <img src={TablesImg} alt="Attack 3"/>
                             </div>
                         </Slider>
 
@@ -88,11 +97,15 @@ export default function MatthPage() {
                             dans les crontab,
                             et dump de leur BDD (qui contenait d'ailleurs quelques flags).
                             <br/><br/>
-                            Plus tard dans l'évenement, notamment pendant la nuit de mardi à mercredi, nous avons tenté des attaques
+                            Plus tard dans l'évenement, notamment pendant la nuit de mardi à mercredi, nous avons tenté
+                            des attaques
                             physiques sur les équipements adverses.
-                            Nous avons (Matthéo) implanté un programme malveillant dans une clé USB: son effet ? Une fois branchée, le PC
-                            reboot en boucle, et si par chance la victime arrive à sortir de la boucle nous obtenons une backdoor sur son PC.
-                            Malheuresement, nos attaques ont été infructueuses et on très souvent terminé par la case prison.
+                            Nous avons (Matthéo) implanté un programme malveillant dans une clé USB: son effet ? Une
+                            fois branchée, le PC
+                            reboot en boucle, et si par chance la victime arrive à sortir de la boucle nous obtenons une
+                            backdoor sur son PC.
+                            Malheuresement, nos attaques ont été infructueuses et on très souvent terminé par la case
+                            prison.
                         </p>
                     </div>
                 </div>
@@ -117,15 +130,55 @@ export default function MatthPage() {
                     <div className="text-blackout">
                         <h2>Le blackout</h2>
                         <p className="bahnschrift">A partir de mardi soir 22h et pendant toute la nuit,
-                        nous avons été plongés dans le noir, on appelle ça le blackout.<br/>
-                        Avec seuls nos écrans et nos frontales, nous avons passé la nuit dans le noir total,
-                        ce qui outre une ambiance plutôt sympa à donné lieu à plusieurs attaques: espionnage,
-                        dissimulation de micros, infiltration...
-                        Ce blackout à également été l'occasion de récupérer des informations dans le téléphone de l'ambassadeur,
-                        qui avait un code PIN qu'on pourrait qualifier d'assez "classique". </p>
+                            nous avons été plongés dans le noir, on appelle ça le blackout.<br/>
+                            Avec seuls nos écrans et nos frontales, nous avons passé la nuit dans le noir total,
+                            ce qui outre une ambiance plutôt sympa à donné lieu à plusieurs attaques: espionnage,
+                            dissimulation de micros, infiltration...
+                            Ce blackout à également été l'occasion de récupérer des informations dans le téléphone de
+                            l'ambassadeur,
+                            qui avait un code PIN qu'on pourrait qualifier d'assez "classique". </p>
                     </div>
                     <div className="img-blackout">
                         <img src={BlackoutImg} alt="Blackout"/>
+                    </div>
+                </div>
+                <div className="fifthSection">
+                    <h2>Les challenges externes</h2>
+                    <p className="bahnschrift">
+                        Outre l'attaque et la défense, des challenges externes étaient présent: ils nous ont permis de
+                        prendre un
+                        avantage face aux autres équipes via des flags, des accès à des réseaux...
+                        On peut évoquer les challenges suivant: Automate Siemens de GEOIDE, Ambassade des Anumérics,
+                        Train reliant les différents territoires
+                        chargement du bateau-conteneur...
+                    </p>
+                    <div className="img-container">
+                        <img src={GeoideImg} alt="Geoide"/>
+                        <img src={CargoImg} alt="Cargo"/>
+                        <img src={TrainImg} alt="Train"/>
+                    </div>
+                </div>
+                <div className="sixthSection">
+                    <div className="img-bank">
+                        <img src={BankImg} alt="Banque"/>
+                    </div>
+                    <div className="text-bank">
+                        <h2>Le vol de la banque</h2>
+                        <p className="bahnschrift">
+                            Le moment le plus mémorable de l'évenement, du moins pour notre équipe restera
+                            surement le vol de la banque à la fin de l'évenement.<br/>
+                            Pour donner un peu de contexte, les flags récupérés au long de l'event permettaient de gagner
+                            de l'argent sur une plateforme, mais nous n'avions aucune idée de l'utilité de cet argent
+                            jusqu'à la fin de l'évènement.<br/>
+                            Environ 2h avant le coup de sifflet final, la banque a ouvert et des bonus pouvaient être achetés
+                            avec l'argent gagné.<br/>
+                            Le bonus nous ayant le plus servit est un accès à la BDD de la banque, que nous sommes les
+                            premiers à avoir acheté. Nous avons pu récupérer les hash des mots de passe des autres équipes,
+                            et après un coup de hashcat leurs comptes étaient à nous ! Nous avons donc passé la fin de
+                            l'évenement à attendre l'enregistrement d'un flag de leur côté afin de transférer cet argent
+                            sur notre compte.
+
+                        </p>
                     </div>
                 </div>
             </div>
