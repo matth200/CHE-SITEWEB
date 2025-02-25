@@ -21,9 +21,9 @@ export default function KickOffPage() {
             <Typewriter text="CYBERHUMANUM'EST 2025 - KICK-OFF : DECOUVERTE DE L'EVENT" speed={50} />
             
             <p>Le Kick-Off du CyberHumanum'Est 2025 a lancé officiellement le début de cette 5ème édition de l'exercice ! Le rôle de cette journée a été de présenter l'événement dans sa globalité ainsi qu'à découvrir l'ensemble des participants. </p>
-            {/* Section : Présentation du CHE */}
+            
             <div className="body">
-                <div className="left bahnschrift">
+                <div className="bahnschrift">
                     <h2>QU'EST-CE QUE LE CYBERHUMANUM'EST (CHE) ?</h2>
                     <p>
                         CyberHumanum'Est est un exercice grandeur nature de cyber-guerre, prenant la forme d’un war game (attaque-défense) où plusieurs équipes s’affrontent dans un contexte fictif et dynamique. 
@@ -47,12 +47,11 @@ export default function KickOffPage() {
                         <h2>POUR QUI ET AVEC QUI ?</h2>
                         <img src={QuiImg} alt="QUI CHE 2025"/>
                     </div>
-                    
-                   
                 </div>
             </div>
 
-            <div className="colonnedeux">
+
+            <div className="colonnedeux bahnschrift">
                 
                 <div className="left bahnschrift">
                     <h2> LIEU DU DEROULEMENT DE L'EVENT</h2>
@@ -109,11 +108,9 @@ export default function KickOffPage() {
             </div>
 
            
-
-            {/* Section : Scénario de CHE 2025 */}
             <div className="body">
                 <div className="left bahnschrift">
-                    <h2>SCÉNARIO DE L’EXERCICE CHE 2025</h2>
+                    <h2>SCENARIO DE L’EXERCICE CHE 2025</h2>
                     <p>
                         L’exercice CHE 2025 se déroule dans un contexte géopolitique fictif impliquant trois entités principales : l’Anuméric, le Cryptanga et l’APT54. 
                     </p>
@@ -121,7 +118,7 @@ export default function KickOffPage() {
                         <li>
                             <strong>Contexte géopolitique :</strong>
                             <ul>
-                                <li>Les Riverchelles, un pays insulaire de 250 000 habitants, voisin de l’Anuméric et du Cryptanga, subissent des délestages électriques menaçant leur économie. 
+                                <li>Les Riverchelles, un pays voisin de l’Anuméric et du Cryptanga, subissent des délestages électriques menaçant leur économie. 
                                     Cependant, la hausse mondiale du marché des voitures électriques valorise leurs ressources en lithium, remplissant les caisses de l’État des Riverchelles et permet d'envisager des investissements dans divers secteurs. </li>
                                 <li>Murielle Mugier, présidente des Riverchelles, sollicite donc l’aide technologique de l’Anuméric et du Cryptanga dans la santé, l’énergie, les transports et l’armement.</li>
                                 <li>Cependant, un conflit régional oppose la Rootie (soutenue par le Cryptanga) et l’Uacranie (soutenue par l’Anuméric) en Cybérie Australe, près des Maladives.</li>
@@ -139,16 +136,13 @@ export default function KickOffPage() {
                     <p>
                         Comme c'est un jeu, le scénario évolue avec les actions des équipes, impliquant des infrastructures virtuelles et physiques à attaquer ou défendre, couvrant de nombreuses thématiques.
                     </p>
-
-                    <p> 
-                        <h2>Après la présentation du CHE 2025, place au début de la préparation avec un 1er CTF Root-me PRO!</h2>
-                    </p>
                 </div>
             </div>
 
-            <div className="bahnschrift image-container">
-                    <img src={KickOffImg} alt="Kick-Off CHE 2025" className="image-small" />
+            <h2>Apres la presentation du CHE 2025, place au debut de la preparation avec un 1er CTF Root-me PRO!</h2>
 
+            <div className="image-container">
+                    <img src={KickOffImg} alt="Kick-Off CHE 2025" className="image-small" />
                 </div>
         </div>
     );

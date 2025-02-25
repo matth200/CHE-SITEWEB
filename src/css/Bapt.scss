@@ -1,8 +1,7 @@
-.image-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-  }
+img {
+  border-radius: 10px;
+}
+
   
   .image-small {
     width: 30%;
@@ -56,4 +55,8 @@
 .boxcenter img {
   max-width: 100%; 
   height: auto; 
+}
+
+ul, li, p{
+  font-family: bahnschrift;
 }
