@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CHE-SITEWEB/static/css/main.094d2440.css",
-    "main.js": "/CHE-SITEWEB/static/js/main.b3a9217d.js",
+    "main.js": "/CHE-SITEWEB/static/js/main.a70e990a.js",
     "static/media/remise_prix2.png": "/CHE-SITEWEB/static/media/remise_prix2.9db061c76a522b33a9a5.png",
     "static/media/IMG_5491.jpg": "/CHE-SITEWEB/static/media/IMG_5491.72cb8874e0ee4bfb3ce5.jpg",
     "static/media/IMG_5492.jpg": "/CHE-SITEWEB/static/media/IMG_5492.e093ab8ba1092df4b69a.jpg",
@@ -43,10 +43,10 @@
     "index.html": "/CHE-SITEWEB/index.html",
     "static/media/back.svg": "/CHE-SITEWEB/static/media/back.a0fab8838b185f89b8ff77be691c0009.svg",
     "main.094d2440.css.map": "/CHE-SITEWEB/static/css/main.094d2440.css.map",
-    "main.b3a9217d.js.map": "/CHE-SITEWEB/static/js/main.b3a9217d.js.map"
+    "main.a70e990a.js.map": "/CHE-SITEWEB/static/js/main.a70e990a.js.map"
   },
   "entrypoints": [
     "static/css/main.094d2440.css",
-    "static/js/main.b3a9217d.js"
+    "static/js/main.a70e990a.js"
   ]
 }
