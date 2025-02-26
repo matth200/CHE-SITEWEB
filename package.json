@@ -2,7 +2,7 @@
   "name": "che",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://matth200.github.io/che",
+  "homepage": "https://matth200.github.io/CHE-SITEWEB",
   "dependencies": {
     "@emotion/styled": "^11.14.0",
     "@mui/lab": "^6.0.0-beta.28",
