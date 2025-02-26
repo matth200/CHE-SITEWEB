@@ -1,0 +1,44 @@
+$$$ ______   __  __    _______   ______   ______    ___   ___   __  __   ___ __ __   ________   ___   __    __  __   ___ __ __   ___   ______   ______   _________  
+$$$/_____/\ /_/\/_/\ /_______/\ /_____/\ /_____/\  /__/\ /__/\ /_/\/_/\ /__//_//_/\ /_______/\ /__/\ /__/\ /_/\/_/\ /__//_//_/\ /__/\ /_____/\ /_____/\ /________/\ 
+$$$\:::__\/ \ \ \ \ \\::: _  \ \\::::_\/_\:::_ \ \ \::\ \\  \ \\:\ \:\ \\::\| \| \ \\::: _  \ \\::\_\\  \ \\:\ \:\ \\::\| \| \ \\::\ \\::::_\/_\::::_\/_\__.::.__\/ 
+$$$ \:\ \  __\:\_\ \ \\::(_)  \/_\:\/___/\\:(_) ) )_\::\/_\ .\ \\:\ \:\ \\:.      \ \\::(_)  \ \\:. `-\  \ \\:\ \:\ \\:.      \ \\:_\/ \:\/___/\\:\/___/\  \::\ \   
+$$$  \:\ \/_/\\::::_\/ \::  _  \ \\::___\/_\: __ `\ \\:: ___::\ \\:\ \:\ \\:.\-/\  \ \\:: __  \ \\:. _    \ \\:\ \:\ \\:.\-/\  \ \      \::___\/_\_::._\:\  \::\ \  
+$$$   \:\_\ \ \ \::\ \  \::(_)  \ \\:\____/\\ \ `\ \ \\: \ \\::\ \\:\_\:\ \\. \  \  \ \\:.\ \  \ \\. \`-\  \ \\:\_\:\ \\. \  \  \ \      \:\____/\ /____\:\  \::\ \ 
+$$$    \_____\/  \__\/   \_______\/ \_____\/ \_\/ \_\/ \__\/ \::\/ \_____\/ \__\/ \__\/ \__\/\__\/ \__\/ \__\/ \_____\/ \__\/ \__\/       \_____\/ \_____\/   \__\/ 
+$$$
+$$$
+$$$                                                             Welcome to CYBER HUMANUM'EST 2025
+$$$
+$$$
+$$$An immersive cyberwar exercise in Nancy, France
+$$$Organized by the Nancy Defense Base and Lorraine INP, under the aegis of the Commandement de la Cyberdéfense (COMCYBER) and the University of Lorraine
+$$$
+$$$Initializing event protocols...
+$$$Running 'make' to compile the cyber battleground code...
+make
+$$$g++ -o cyberhumanum_app main.cpp -lCyberLib
+./cyberhumanum_app
+$$$Event Dates: January 27 - 31, 2025
+$$$
+$$$Participants: Over 110 students from:
+$$$- Mines Nancy
+$$$- Télécom Nancy
+$$$- Polytech Nancy
+$$$- Faculty of Science and Technology (Master SIRAV)
+$$$- UFR Sciences Humaines et Sociales (Master VSOC)
+$$$- UFR MIM (Master SIS)
+$$$- IUT Nancy-Brabois (Cybersecurity track of the BUT Networks and Telecommunications)
+$$$- ENSISA Mulhouse (invited institution)
+$$$
+$$$Event Schedule:
+$$$- January 27-29: Cyber defense exercises at Polytech Nancy
+$$$- January 30: After Action Review (RETEX) at Mines Nancy
+$$$- January 31: Awards ceremony and Cyber Careers Forum at IUT Nancy-Brabois
+$$$
+$$$Participants has faced cybersecurity challenges, including:
+$$$- Exploiting vulnerabilities in computer systems
+$$$- Defending against cyber attacks
+$$$- Engaging in offensive and defensive cyber operations
+$$$- Managing influence operations
+$$$
+$$$The event has concluded with a recruitment forum, offering opportunities to connect with industry partners and explore career paths in cybersecurity.
