@@ -2,6 +2,7 @@
   "name": "che",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://matth200.github.io/che",
   "dependencies": {
     "@emotion/styled": "^11.14.0",
     "@mui/lab": "^6.0.0-beta.28",
@@ -22,6 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "npx gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
